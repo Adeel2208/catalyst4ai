@@ -267,7 +267,7 @@ export default function HomePage() {
                       viewport={{ once: true }}
                       className="inline-flex items-center gap-2 px-6 py-3 rounded-full bg-gradient-to-r from-[#2db8c7]/20 to-[#25a5b3]/20 border-2 border-[#2db8c7]/30 mb-6"
                     >
-                      <span className="text-3xl">{String.fromCodePoint(0x1F4AF)}</span><span className="text-base font-bold text-[#003867]">Our Core Capabilities</span>
+                      <span className="text-base font-bold text-[#003867]">Our Core Capabilities</span>
                     </motion.div>
                     <h2 className="text-4xl sm:text-5xl lg:text-6xl font-black text-[#003867] mb-6">
                       What We Do
