@@ -1,0 +1,251 @@
+                  {/* Complete Medical Software Solutions - Redesigned with Scrolling Cards */}
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    transition={{ duration: 0.8 }}
+                    viewport={{ once: true }}
+                    className="relative py-12"
+                  >
+                    <div className="text-center mb-12">
+                      <h3 className="text-3xl sm:text-4xl lg:text-5xl font-black text-[#003867] mb-4">
+                        Complete Medical Software Solutions
+                      </h3>
+                      <p className="text-lg sm:text-xl text-gray-700 max-w-3xl mx-auto">
+                        End-to-end healthcare software systems that integrate seamlessly with your existing infrastructure
+                      </p>
+                    </div>
+
+                    {/* Scrolling Container */}
+                    <div className="relative overflow-hidden">
+                      {/* Gradient Fades */}
+                      <div className="absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-white to-transparent z-10"></div>
+                      <div className="absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-white to-transparent z-10"></div>
+                      
+                      {/* Scrolling Track - Right to Left */}
+                      <div className="flex animate-marquee-reverse whitespace-nowrap py-4">
+                        <div className="flex items-center space-x-6 px-6">
+                          {[
+                            { 
+                              logo: '/emr.jpeg',
+                              title: 'EHR/EMR Systems', 
+                              desc: 'Electronic health records with real-time data access and clinical workflows',
+                              color: 'from-blue-400 to-blue-600'
+                            },
+                            { 
+                              logo: '/HMS.png',
+                              title: 'Hospital Management', 
+                              desc: 'Complete HIS solutions for patient registration and operational efficiency',
+                              color: 'from-purple-400 to-purple-600'
+                            },
+                            { 
+                              icon: '🧪', 
+                              title: 'LIMS Integration', 
+                              desc: 'Laboratory management with automated workflows and quality control',
+                              color: 'from-green-400 to-green-600'
+                            },
+                            { 
+                              logo: '/telemedicine.png',
+                              title: 'Telemedicine', 
+                              desc: 'Remote care platforms for virtual consultations and patient monitoring',
+                              color: 'from-cyan-400 to-cyan-600'
+                            },
+                            { 
+                              icon: '👤', 
+                              title: 'Patient Portals', 
+                              desc: 'Patient interfaces for appointments, records access, and communication',
+                              color: 'from-pink-400 to-pink-600'
+                            },
+                            { 
+                              icon: '💊', 
+                              title: 'Pharmacy Systems', 
+                              desc: 'Medication management with prescription tracking and inventory',
+                              color: 'from-orange-400 to-orange-600'
+                            },
+                            { 
+                              icon: '💰', 
+                              title: 'Revenue Cycle', 
+                              desc: 'Billing and claims processing with automated revenue optimization',
+                              color: 'from-yellow-400 to-yellow-600'
+                            },
+                            { 
+                              icon: '🔗', 
+                              title: 'HL7/FHIR Integration', 
+                              desc: 'Standards-based interoperability for seamless data exchange',
+                              color: 'from-indigo-400 to-indigo-600'
+                            },
+                          ].map((item, i) => (
+                            <div
+                              key={i}
+                              className="inline-block w-[340px] flex-shrink-0"
+                            >
+                              <div className={`relative bg-gradient-to-br ${item.color} rounded-3xl p-6 shadow-2xl overflow-hidden group hover:scale-105 transition-transform duration-300 h-[280px]`}>
+                                {/* Decorative Icon Background */}
+                                <div className="absolute top-4 right-4 opacity-10 pointer-events-none">
+                                  <svg 
+                                    className="w-20 h-20 text-white stroke-[1.5]" 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    viewBox="0 0 100 100"
+                                  >
+                                    <ellipse 
+                                      cx="50" 
+                                      cy="50" 
+                                      rx="20" 
+                                      ry="30" 
+                                      transform={`rotate(${i * 45} 50 50)`}
+                                      strokeLinecap="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                {/* Content - Positioned inside card */}
+                                <div className="relative z-10 flex flex-col h-full">
+                                  {/* Logo or Icon */}
+                                  <div className="mb-4 flex-shrink-0">
+                                    {item.logo ? (
+                                      <div className="w-24 h-24 bg-white/90 backdrop-blur-sm rounded-2xl p-3 flex items-center justify-center shadow-lg">
+                                        <Image
+                                          src={item.logo}
+                                          alt={item.title}
+                                          width={80}
+                                          height={80}
+                                          className="object-contain"
+                                        />
+                                      </div>
+                                    ) : (
+                                      <div className="text-5xl">{item.icon}</div>
+                                    )}
+                                  </div>
+
+                                  {/* Title */}
+                                  <h4 className="text-xl font-black text-white mb-2 flex-shrink-0 leading-tight">
+                                    {item.title}
+                                  </h4>
+                                  
+                                  {/* Description - Fixed height to prevent overflow */}
+                                  <p className="text-white/90 text-sm leading-relaxed line-clamp-4">
+                                    {item.desc}
+                                  </p>
+                                </div>
+
+                                {/* Subtle gradient overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                        {/* Duplicate for seamless loop */}
+                        <div className="flex items-center space-x-6 px-6">
+                          {[
+                            { 
+                              logo: '/emr.jpeg',
+                              title: 'EHR/EMR Systems', 
+                              desc: 'Electronic health records with real-time data access and clinical workflows',
+                              color: 'from-blue-400 to-blue-600'
+                            },
+                            { 
+                              logo: '/HMS.png',
+                              title: 'Hospital Management', 
+                              desc: 'Complete HIS solutions for patient registration and operational efficiency',
+                              color: 'from-purple-400 to-purple-600'
+                            },
+                            { 
+                              icon: '🧪', 
+                              title: 'LIMS Integration', 
+                              desc: 'Laboratory management with automated workflows and quality control',
+                              color: 'from-green-400 to-green-600'
+                            },
+                            { 
+                              logo: '/telemedicine.png',
+                              title: 'Telemedicine', 
+                              desc: 'Remote care platforms for virtual consultations and patient monitoring',
+                              color: 'from-cyan-400 to-cyan-600'
+                            },
+                            { 
+                              icon: '👤', 
+                              title: 'Patient Portals', 
+                              desc: 'Patient interfaces for appointments, records access, and communication',
+                              color: 'from-pink-400 to-pink-600'
+                            },
+                            { 
+                              icon: '💊', 
+                              title: 'Pharmacy Systems', 
+                              desc: 'Medication management with prescription tracking and inventory',
+                              color: 'from-orange-400 to-orange-600'
+                            },
+                            { 
+                              icon: '💰', 
+                              title: 'Revenue Cycle', 
+                              desc: 'Billing and claims processing with automated revenue optimization',
+                              color: 'from-yellow-400 to-yellow-600'
+                            },
+                            { 
+                              icon: '🔗', 
+                              title: 'HL7/FHIR Integration', 
+                              desc: 'Standards-based interoperability for seamless data exchange',
+                              color: 'from-indigo-400 to-indigo-600'
+                            },
+                          ].map((item, i) => (
+                            <div
+                              key={`dup-${i}`}
+                              className="inline-block w-[340px] flex-shrink-0"
+                            >
+                              <div className={`relative bg-gradient-to-br ${item.color} rounded-3xl p-6 shadow-2xl overflow-hidden group hover:scale-105 transition-transform duration-300 h-[280px]`}>
+                                {/* Decorative Icon Background */}
+                                <div className="absolute top-4 right-4 opacity-10 pointer-events-none">
+                                  <svg 
+                                    className="w-20 h-20 text-white stroke-[1.5]" 
+                                    fill="none" 
+                                    stroke="currentColor" 
+                                    viewBox="0 0 100 100"
+                                  >
+                                    <ellipse 
+                                      cx="50" 
+                                      cy="50" 
+                                      rx="20" 
+                                      ry="30" 
+                                      transform={`rotate(${i * 45} 50 50)`}
+                                      strokeLinecap="round"
+                                    />
+                                  </svg>
+                                </div>
+
+                                {/* Content - Positioned inside card */}
+                                <div className="relative z-10 flex flex-col h-full">
+                                  {/* Logo or Icon */}
+                                  <div className="mb-4 flex-shrink-0">
+                                    {item.logo ? (
+                                      <div className="w-24 h-24 bg-white/90 backdrop-blur-sm rounded-2xl p-3 flex items-center justify-center shadow-lg">
+                                        <Image
+                                          src={item.logo}
+                                          alt={item.title}
+                                          width={80}
+                                          height={80}
+                                          className="object-contain"
+                                        />
+                                      </div>
+                                    ) : (
+                                      <div className="text-5xl">{item.icon}</div>
+                                    )}
+                                  </div>
+
+                                  {/* Title */}
+                                  <h4 className="text-xl font-black text-white mb-2 flex-shrink-0 leading-tight">
+                                    {item.title}
+                                  </h4>
+                                  
+                                  {/* Description - Fixed height to prevent overflow */}
+                                  <p className="text-white/90 text-sm leading-relaxed line-clamp-4">
+                                    {item.desc}
+                                  </p>
+                                </div>
+
+                                {/* Subtle gradient overlay */}
+                                <div className="absolute inset-0 bg-gradient-to-br from-white/5 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                              </div>
+                            </div>
+                          ))}
+                        </div>
+                      </div>
+                    </div>
+                  </motion.div>

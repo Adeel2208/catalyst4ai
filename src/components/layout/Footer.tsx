@@ -2,52 +2,41 @@
 
 import { motion } from 'framer-motion'
 import Link from 'next/link'
-import { ArrowRight, Mail, Phone, MapPin, Facebook, Twitter, Linkedin, Instagram, Award, Shield, Heart } from 'lucide-react'
+import Image from 'next/image'
+import { ArrowRight, Mail, MapPin, Linkedin, Twitter, Heart } from 'lucide-react'
 
 const footerSections = [
   {
-    title: "Quick Links",
-    links: [
-      { name: "Home", href: "/" },
-      { name: "About Us", href: "/about" },
-      { name: "Products", href: "/products" },
-      { name: "Certifications", href: "/certifications" },
-      { name: "Contact", href: "/contact" }
-    ]
-  },
-  {
-    title: "Our Products",
-    links: [
-      { name: "Electro Medical Equipment", href: "/products/electro-medical" },
-      { name: "Medical Gases", href: "/products" },
-      { name: "Hospital Furniture", href: "/products" },
-      { name: "CSSD Equipment", href: "/products" },
-      { name: "Surgical Instruments", href: "/products" }
-    ]
-  },
-  {
     title: "Company",
     links: [
+      { name: "About Us", href: "/about" },
+      { name: "Our Team", href: "/team" },
+      { name: "Core Values", href: "/core-values" },
+      { name: "Certifications", href: "/certifications" },
       { name: "CEO Message", href: "/ceo-message" },
-      { name: "Quality & Compliance", href: "/certifications" },
-      { name: "Our Clients", href: "/about" },
-      { name: "Get a Quote", href: "/contact" }
+    ]
+  },
+  {
+    title: "Careers",
+    links: [
+      { name: "Open Positions", href: "/careers" },
+      { name: "Why Join Us", href: "/careers" },
+      { name: "Benefits", href: "/careers" },
+      { name: "Apply Now", href: "/contact" }
+    ]
+  },
+  {
+    title: "Resources",
+    links: [
+      { name: "Newsletters", href: "/newsletters" },
+      { name: "Contact Us", href: "/contact" },
     ]
   }
 ]
 
 const socialLinks = [
-  { name: "Facebook", icon: Facebook, href: "#" },
-  { name: "Twitter", icon: Twitter, href: "#" },
   { name: "LinkedIn", icon: Linkedin, href: "#" },
-  { name: "Instagram", icon: Instagram, href: "#" }
-]
-
-const certifications = [
-  { name: "Since 1990", description: "35+ Years of Excellence" },
-  { name: "Quality Management", description: "ISO Compliant Systems" },
-  { name: "Caring for Life", description: "Our Core Philosophy" },
-  { name: "Trusted Partner", description: "100+ Major Clients" }
+  { name: "Twitter", icon: Twitter, href: "#" }
 ]
 
 export default function Footer() {
@@ -64,18 +53,18 @@ export default function Footer() {
             className="max-w-4xl mx-auto text-center"
           >
             <h3 className="text-2xl lg:text-3xl font-bold mb-4">
-              Stay Connected with MEDAP International
+              Stay Updated with Catalyst4AI
             </h3>
             <p className="text-gray-400 mb-8 max-w-2xl mx-auto">
-              Subscribe to receive updates on new medical equipment, healthcare solutions, 
-              special offers, and industry insights from Pakistan's leading healthcare provider.
+              Subscribe to receive updates on medical AI innovations, career opportunities, 
+              and insights from our team.
             </p>
             
             <div className="flex flex-col sm:flex-row gap-4 max-w-md mx-auto">
               <input
                 type="email"
                 placeholder="Enter your email address"
-                className="flex-1 px-6 py-4 bg-gray-800 border border-gray-700 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-primary-500 focus:border-transparent"
+                className="flex-1 px-6 py-4 bg-gray-800 border border-gray-700 rounded-2xl text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-[#2db8c7] focus:border-transparent"
               />
               <motion.button
                 whileHover={{ scale: 1.05 }}
@@ -102,31 +91,31 @@ export default function Footer() {
             className="lg:col-span-2"
           >
             <div className="flex items-center space-x-3 mb-6">
-              <div className="w-10 h-10 bg-gradient-to-r from-[#2db8c7] to-[#25a5b3] rounded-xl flex items-center justify-center">
-                <Heart className="text-white" size={20} />
+              <div className="relative w-12 h-12">
+                <Image
+                  src="/MEDAP Logo.png"
+                  alt="Catalyst4AI Logo"
+                  fill
+                  className="object-contain"
+                />
               </div>
-              <span className="text-2xl font-bold">MEDAP International</span>
+              <span className="text-2xl font-bold">Catalyst4AI</span>
             </div>
             
             <p className="text-gray-400 mb-6 leading-relaxed">
-              Pakistan's leading supplier and service provider of Electro Medical Equipment, Hospital Furniture, 
-              Surgical Instruments, and Medical Gases. Serving healthcare institutions with "Caring for Life" 
-              philosophy since 1990.
+              Pioneering artificial intelligence solutions for medical science. Specializing in NLP and 
+              Computer Vision to transform healthcare delivery and improve patient outcomes.
             </p>
             
             {/* Contact Info */}
             <div className="space-y-3 mb-6">
               <div className="flex items-center space-x-3">
-                <Phone size={16} className="text-[#2db8c7]" />
-                <span className="text-gray-300">+92-42-36315179 / 36363339</span>
-              </div>
-              <div className="flex items-center space-x-3">
                 <Mail size={16} className="text-[#2db8c7]" />
-                <span className="text-gray-300">medap.international@gmail.com</span>
+                <span className="text-gray-300">careers@catalyst4ai.com</span>
               </div>
               <div className="flex items-start space-x-3">
                 <MapPin size={16} className="text-[#2db8c7] mt-1" />
-                <span className="text-gray-300">17 G, Sharf Mansion, Near Ganga Ram Hospital<br />16 Shahrah e Fatima Jinnah, Lahore, Pakistan</span>
+                <span className="text-gray-300">2nd Floor, 13 P DHA Rahbar<br />Lahore, Pakistan</span>
               </div>
             </div>
 
@@ -173,9 +162,6 @@ export default function Footer() {
             </motion.div>
           ))}
         </div>
-
-        {/* Certifications */}
-        
       </div>
 
       {/* Bottom Bar */}
@@ -189,7 +175,7 @@ export default function Footer() {
             className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0"
           >
             <div className="text-gray-400 text-sm">
-              © {new Date().getFullYear()} MEDAP International. All rights reserved.
+              © {new Date().getFullYear()} Catalyst4AI. All rights reserved.
             </div>
             
             <div className="flex flex-wrap justify-center md:justify-end space-x-6 text-sm">
@@ -207,26 +193,12 @@ export default function Footer() {
               >
                 Terms of Service
               </motion.a>
-              <motion.a
-                href="#"
-                whileHover={{ y: -1 }}
-                className="text-gray-400 hover:text-[#2db8c7] transition-colors duration-200"
-              >
-                Cookie Policy
-              </motion.a>
-              <motion.a
-                href="#"
-                whileHover={{ y: -1 }}
-                className="text-gray-400 hover:text-[#2db8c7] transition-colors duration-200"
-              >
-                Accessibility
-              </motion.a>
             </div>
           </motion.div>
         </div>
       </div>
 
-      {/* Trust Badges */}
+      {/* Trust Badge */}
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         whileInView={{ opacity: 1, y: 0 }}
@@ -235,18 +207,21 @@ export default function Footer() {
         className="bg-gray-950 py-4"
       >
         <div className="container mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="flex justify-center items-center space-x-8 text-xs text-gray-500">
+          <div className="flex justify-center items-center space-x-8 text-xs text-gray-500">
             <div className="flex items-center space-x-2">
-              <Shield size={14} />
-              <span>Quality Assured</span>
-            </div>
-            <div className="flex items-center space-x-2">
-              <Award size={14} />
-              <span>Trusted Since 1990</span>
+              <div className="relative w-4 h-4">
+                <Image
+                  src="/MEDAP Logo.png"
+                  alt="Catalyst4AI"
+                  fill
+                  className="object-contain"
+                />
+              </div>
+              <span>Medical AI Innovation</span>
             </div>
             <div className="flex items-center space-x-2">
               <Heart size={14} />
-              <span>Caring for Life</span>
+              <span>Transforming Healthcare</span>
             </div>
           </div>
         </div>
